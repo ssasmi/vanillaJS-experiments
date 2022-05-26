@@ -1,9 +1,45 @@
 .centr {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .centr button {
-    margin: 0px 5px 0px 5px;
+  margin: 0px 5px 0px 5px;
 }
+
+.reviews-btn {
+    display: flex;
+}
+
+.reviews-btn button {
+    margin: 0 15px 0 0;
+}
+
+.reviews img {
+  width: 100px;
+  height: 100px;
+  margin: auto;
+}
+
+.reviews ul {
+  margin: 0px;
+  padding: 0;
+  list-style: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

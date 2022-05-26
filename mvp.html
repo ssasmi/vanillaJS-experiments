@@ -9,6 +9,10 @@
     <meta charset="utf-8" />
     <meta name="description" content="My description" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+    />
 
     <title>JS</title>
   </head>
@@ -22,6 +26,9 @@
             src="https://via.placeholder.com/200x70?text=Logo"
             height="70"
         /></a>
+        <button class="sidebar-toggle">
+          <i class="fas fa-bars"></i>
+        </button>
         <ul>
           <li>Menu Item 1</li>
           <li><a href="#">Menu Item 2</a></li>
@@ -35,26 +42,69 @@
         </ul>
       </nav>
     </header>
+
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <img src="logo.svg" class="logo" alt="" />
+        <button class="close-btn"><i class="fas fa-times"></i></button>
+      </div>
+      <!-- links -->
+      <ul class="links">
+        <li>
+          <a href="index.html">home</a>
+        </li>
+        <li>
+          <a href="about.html">about</a>
+        </li>
+      </ul>
+      <!-- social media -->
+      <ul class="social-icons">
+        <li>
+          <a href="https://www.twitter.com">
+            <i class="fab fa-facebook"></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.twitter.com">
+            <i class="fab fa-twitter"></i>
+          </a>
+        </li>
+      </ul>
+    </aside>
     <main>
       <hr />
       <section>
         <div class="centr">
           <button id="color"><i>Color</i></button>
-          <button class="btn-2 dec"><b>Count - &rarr;</b></button>
-          <button class="btn-2 inc"><b>Count + &rarr;</b></button>
+          <button class="btn-2 dec"><b>Count - </b></button>
+          <button class="btn-2 inc"><b>Count +</b></button>
         </div>
         <p class="text">Получили: <span>нажми</span></p>
         <br />
       </section>
       <hr />
-      <section>
-        <div class="rewiews">
-          <button id="prev-btn"><i>&larr;</i></button>
+      <section class="reviews">
+        <div class="reviews-btn">
+          <button class="prev-btn"><i>&larr;</i></button>
           <button class="next-btn"><i>&rarr;</i></button>
-          <button class="random-btn"><b>&rarr; - &rarr;</b></button>
+          <button class="random-btn"><b>&larr; &rarr;</b></button>
         </div>
-        <p class="text">Получили: <span>нажми</span></p>
+        <article>
+          <ul>
+            <li id="author">List item 1</li>
+            <li id="job">List item 2</li>
+          </ul>
+          <figure>
+            <img
+              alt="Stock photo"
+              src="https://via.placeholder.com/1080x500?text=Amazing+stock+photo"
+            />
+          </figure>
+        </article>
         <br />
+      </section>
+      <section class="section-center">
+<button type="submit" class="btn-container">Menu</button>
       </section>
     </main>
     <footer>
@@ -65,6 +115,5 @@
     </footer>
     <script src="app.js"></script>
     <script src="app2.js"></script>
-
   </body>
 </html>
