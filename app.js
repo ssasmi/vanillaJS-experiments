@@ -1,14 +1,29 @@
 const text = document.querySelector(".text span");
 
-const btnsCaunter = document.querySelectorAll(".btn-2");
-const count = 0;
+const btnsCounter = document.querySelectorAll(".btn-2");
+let count = 0;
 
-console.log(btnsCaunter);
-btnsCaunter.forEach((btn) => {
-    btn.addEventListener("click", (e) => {
-        return console.log(e.currentTarget.classList)
-    })
-})
+function getCount() {
+  return --count;
+}
+console.log(btnsCounter);
+btnsCounter.forEach((btn) => {
+  btn.addEventListener("click", (e) => {
+    const styles = e.currentTarget.classList;
+    if (styles.contains("dec")) {
+      getCount();
+    } else if (styles.contains("inc")) {
+      ++count;
+    } else {
+      count = 0;
+    }
+    btnsCounter.forEach((btn) => {
+      btn.textContent = `${"n   " + btn.classList[1]}: ${count}`;
+    });
+
+    count>=0?text.style.backgroundColor = "green":text.style.backgroundColor = "red"
+  });
+});
 text.textContent = count;
 // color /////////////////////////////
 const btnColor = document.getElementById("color");
