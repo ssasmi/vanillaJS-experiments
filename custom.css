@@ -1,0 +1,9 @@
+.centr {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.centr a {
+    margin: 0px 5px 0px 5px;
+}
