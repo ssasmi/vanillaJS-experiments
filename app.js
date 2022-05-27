@@ -6,7 +6,7 @@ let count = 0;
 function getCount() {
   return --count;
 }
-console.log(btnsCounter);
+
 btnsCounter.forEach((btn) => {
   btn.addEventListener("click", (e) => {
     const styles = e.currentTarget.classList;
