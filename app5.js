@@ -6,6 +6,7 @@ const containerGrocery = document.querySelector(".grocery-container");
 const alert = document.querySelector(".alert");
 
 // about branch
+/// merge
 
 let editElement;
 let editFlag = false;
