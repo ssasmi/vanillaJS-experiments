@@ -48,7 +48,79 @@ function addItem(e) {
 
     editLocalStorage(editID, value);
     setBackToDefault();
+  } else {
+    displayAlert("please enter value", "danger");
   }
+}
+
+function displayAlert(text, action) {
+  alert.textContent = text;
+  alert.classList.add(`alert-${action}`);
+  setTimeout(() => {
+    alert.textContent = "";
+    alert.classList.remove(`alert-${action}`);
+  }, 1500);
+}
+
+function deleteItem(e) {
+  const element = e.currentTarget.parentElement.parentElement;
+  const id = element.dataset.id;
+
+  list.removeChild(element);
+  if (list.children.length === 0) {
+    container.classList.remove("show-container");
+  }
+  displayAlert("item removed", "danger");
+
+  setBackToDefault();
+  // remove from local storage
+  removeFromLocalStorage(id);
+}
+
+function setBackToDefault() {
+  grocery.value = "";
+  editFlag = false;
+  editID = "";
+  submitBtn.textContent = "submit";
+}
+
+// ****** local storage **********
+
+// add to local storage
+function addToLocalStorage(id, value) {
+  const grocery = { id, value };
+  let items = getLocalStorage();
+  items.push(grocery);
+  localStorage.setItem("list", JSON.stringify(items));
+}
+
+function getLocalStorage() {
+  return localStorage.getItem("list")
+    ? JSON.parse(localStorage.getItem("list"))
+    : [];
+}
+
+function removeFromLocalStorage(id) {
+  let items = getLocalStorage();
+
+  items = items.filter(function (item) {
+    if (item.id !== id) {
+      return item;
+    }
+  });
+
+  localStorage.setItem("list", JSON.stringify(items));
+}
+function editLocalStorage(id, value) {
+  let items = getLocalStorage();
+
+  items = items.map(function (item) {
+    if (item.id === id) {
+      item.value = value;
+    }
+    return item;
+  });
+  localStorage.setItem("list", JSON.stringify(items));
 }
 
 function setupIems() {}
